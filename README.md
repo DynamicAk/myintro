@@ -1,3 +1,3 @@
 # portfolio
 
-https://dynamic-ak.github.io/portfolio/
+https://dynamic-ak.github.io/myintro
