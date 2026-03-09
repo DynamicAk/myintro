@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>messages</title>
+  <link rel="icon" href="./assets/images/logo.ico" />
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, Arial, sans-serif; margin: 0; padding: 1rem 1.25rem 3rem; background:#0d1117; color:#e6edf3; }
+    h1 { margin-top:0; font-size:1.65rem; }
+    p.hint { font-size: .85rem; opacity:.75; }
+    .toolbar { display:flex; flex-wrap:wrap; gap:.75rem; align-items:center; margin:1rem 0; }
+    button { cursor:pointer; background:#238636; color:#fff; border:1px solid #2ea043; padding:.55rem .9rem; border-radius:6px; font-size:.85rem; font-weight:500; display:inline-flex; gap:.4rem; align-items:center; }
+    button.secondary { background:#30363d; border-color:#3d444d; }
+    button.danger { background:#d1242f; border-color:#f85149; }
+    button:disabled { opacity:.5; cursor:not-allowed; }
+    input[type="text"] { padding:.55rem .65rem; border:1px solid #30363d; background:#161b22; color:#e6edf3; border-radius:6px; min-width:240px; }
+    table { width:100%; border-collapse:collapse; margin-top:1rem; font-size:.8rem; }
+    th, td { border:1px solid #30363d; padding:.5rem .55rem; vertical-align:top; }
+    th { background:#161b22; position:sticky; top:0; z-index:2; }
+    tbody tr:nth-child(even) { background:#161b22; }
+    .status { margin-top: .75rem; font-size:.8rem; }
+    .badge { padding:2px 6px; border-radius:10px; background:#30363d; font-size:.65rem; text-transform:uppercase; letter-spacing:.5px; }
+    .message { white-space:pre-wrap; max-width:420px; }
+    .message-link { color:#58a6ff; text-decoration:underline; word-break:break-all; }
+    .message-link:hover { color:#79c0ff; background:rgba(88,166,255,0.1); border-radius:3px; }
+    .nowrap { white-space:nowrap; }
+    .muted { opacity:.6; }
+    .flex { display:flex; gap:.4rem; }
+    .empty { margin-top:2rem; text-align:center; opacity:.6; }
+    footer { margin-top:2.5rem; font-size:.65rem; opacity:.5; text-align:center; }
+    .warning { background:#332400; color:#f0c14b; padding:.6rem .75rem; border:1px solid #6e5200; border-radius:6px; font-size:.7rem; }
+    .loading { animation:pulse 1.2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:.35;} 50%{opacity:.9;} }
+    mark { background:#3d2d00; color:#ffdb70; padding:0 2px; border-radius:3px; }
+  </style>
+</head>
+<body>
+  <!-- Portfolio Authentication Check -->
+  <script src="./assets/js/auth.js"></script>
+  <script>
+    // Protect this page - require authentication
+    if (!requireAuth()) {
+      // User will be redirected to login.html by requireAuth()
+      document.body.innerHTML = '<div style="text-align:center;margin:2rem;"><h2>Redirecting to login...</h2></div>';
+    } else {
+      // User is authenticated, add logout button functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        // Add logout button to toolbar
+        const toolbar = document.querySelector('.toolbar');
+        if (toolbar) {
+          const logoutBtn = document.createElement('button');
+          logoutBtn.className = 'danger';
+          logoutBtn.innerHTML = 'Logout';
+          logoutBtn.title = 'Logout from Portfolio';
+          logoutBtn.onclick = logout;
+          toolbar.appendChild(logoutBtn);
+        }
+      });
+    }
+  </script>
+
+  <h1>Contact Form Messages from my portfolio</h1>
+
+  <div class="toolbar">
+    <input type="text" id="search" placeholder="Search name / email / text..." />
+    <button id="refreshBtn" class="secondary" title="Reload from database">Reload</button>
+    <button id="exportBtn" disabled>Export CSV</button>
+    <button id="deleteAllBtn" class="danger" disabled>Delete All (Filtered)</button>
+    <span id="countBadge" class="badge">0</span>
+  </div>
+
+  <div class="status" id="status">Initializing Firebase...</div>
+
+  <table id="messagesTable" style="display:none;">
+    <thead>
+      <tr>
+        <th class="nowrap">#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Message</th>
+  <th class="nowrap">Timestamp</th>
+  <th class="nowrap">Actions</th>
+      </tr>
+    </thead>
+    <tbody id="messagesBody"></tbody>
+  </table>
+
+  <div id="emptyState" class="empty" style="display:none;">No messages yet.</div>
+
+  <footer>&copy; 2025 Admin Viewer. Local utility page.</footer>
+
+  <!-- Firebase SDK (v8) -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <script>
+    // Same config used in visitor.js
+    const firebaseConfig = {
+      apiKey: "AIzaSyDHm_XDLHM7N-LJyIZdDo6T8t8UJvtj5-c",
+      authDomain: "visitorportfolio-3d2ae.firebaseapp.com",
+      projectId: "visitorportfolio-3d2ae",
+      storageBucket: "visitorportfolio-3d2ae.firebasestorage.app",
+      messagingSenderId: "956958362720",
+      appId: "1:956958362720:web:bda11abd82e005f1de8705",
+  measurementId: "G-3241EGY9TS",
+  databaseURL: "https://visitorportfolio-3d2ae-default-rtdb.asia-southeast1.firebasedatabase.app/"
+    };
+    if(!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+    const statusEl = document.getElementById('status');
+    const bodyEl = document.getElementById('messagesBody');
+    const tableEl = document.getElementById('messagesTable');
+    const emptyEl = document.getElementById('emptyState');
+    const searchEl = document.getElementById('search');
+    const exportBtn = document.getElementById('exportBtn');
+    const refreshBtn = document.getElementById('refreshBtn');
+    const deleteAllBtn = document.getElementById('deleteAllBtn');
+    const countBadge = document.getElementById('countBadge');
+
+    let rawMessages = []; // full dataset
+    let filtered = []; // after search filter
+
+    function setStatus(msg, cls='') { statusEl.textContent = msg; statusEl.className = 'status ' + cls; }
+
+    function fetchMessages() {
+      setStatus('Loading messages...', 'loading');
+      db.ref('messages').once('value').then(snap => {
+        const data = snap.val() || {};
+        rawMessages = Object.entries(data).map(([id, val]) => ({ id, ...val }));
+        // sort desc by timestamp if parsable
+        rawMessages.sort((a,b) => new Date(b.ts||0) - new Date(a.ts||0));
+        applyFilter();
+        setStatus('Loaded ' + rawMessages.length + ' message' + (rawMessages.length!==1?'s':'') + '.');
+      }).catch(err => {
+        console.error(err);
+        setStatus('Error loading messages: ' + err.message, 'error');
+      });
+    }
+
+    function esc(str){ return (str||'').replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c])); }
+
+    function applyFilter() {
+      const q = searchEl.value.trim().toLowerCase();
+      filtered = !q ? rawMessages : rawMessages.filter(m =>
+        (m.name||'').toLowerCase().includes(q) ||
+        (m.email||'').toLowerCase().includes(q) ||
+        (m.message||'').toLowerCase().includes(q)
+      );
+      render();
+    }
+
+    function highlight(text, q){
+      if(!q) return esc(text);
+      const re = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')','ig');
+      return esc(text).replace(re,'<mark>$1</mark>');
+    }
+
+    function makeLinksClickable(text) {
+      if (!text) return '';
+      
+      // URL regex pattern to match http/https URLs
+      const urlRegex = /(https?:\/\/[^\s<>"{}|\\^`[\]]+)/gi;
+      
+      // Replace URLs with clickable links
+      return text.replace(urlRegex, function(url) {
+        // Clean up the URL (remove trailing punctuation that might not be part of the URL)
+        const cleanUrl = url.replace(/[.,;:!?]+$/, '');
+        const trailingPunct = url.substring(cleanUrl.length);
+        
+        return `<a href="${cleanUrl}" target="_blank" rel="noopener noreferrer" class="message-link">${cleanUrl}</a>${trailingPunct}`;
+      });
+    }
+
+    function render() {
+      bodyEl.innerHTML = '';
+      if(filtered.length === 0) {
+        tableEl.style.display = 'none';
+        emptyEl.style.display = 'block';
+        exportBtn.disabled = true;
+        deleteAllBtn.disabled = true;
+        countBadge.textContent = '0';
+        return;
+      }
+      tableEl.style.display = '';
+      emptyEl.style.display = 'none';
+      const q = searchEl.value.trim().toLowerCase();
+      filtered.forEach((m, idx) => {
+        const tr = document.createElement('tr');
+        // Process message text: first make links clickable, then apply highlighting
+        const messageText = m.message || '';
+        const messageWithLinks = makeLinksClickable(messageText);
+        const highlightedMessage = q ? messageWithLinks.replace(
+          new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')','ig'),
+          '<mark>$1</mark>'
+        ) : messageWithLinks;
+        
+        tr.innerHTML = `
+          <td class="nowrap">${idx+1}</td>
+          <td>${highlight(m.name||'', q)}</td>
+          <td><a href="mailto:${esc(m.email||'')}">${highlight(m.email||'', q)}</a></td>
+          <td class="message">${highlightedMessage}</td>
+          <td class="nowrap">${esc(m.ts||'')}</td>
+          <td class="nowrap flex">
+            <button class="secondary" data-copy="${m.id}" title="Copy Message">Copy</button>
+            <button class="danger" data-del="${m.id}" title="Delete message">✕</button>
+          </td>`;
+        bodyEl.appendChild(tr);
+      });
+      exportBtn.disabled = filtered.length === 0;
+      deleteAllBtn.disabled = filtered.length === 0;
+      countBadge.textContent = filtered.length;
+    }
+
+    function exportCSV() {
+  const headers = ['id','name','email','message','ts'];
+      const lines = [headers.join(',')];
+      filtered.forEach(m => {
+        const row = headers.map(h => '"' + ('' + (m[h]||'')).replace(/"/g,'""') + '"').join(',');
+        lines.push(row);
+      });
+      const blob = new Blob([lines.join('\n')], { type:'text/csv;charset=utf-8;' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'messages_export_' + new Date().toISOString().replace(/[:T]/g,'-').slice(0,19) + '.csv';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+
+    function copyMessage(id) {
+      const m = rawMessages.find(x=>x.id===id);
+      if(!m) return;
+      const messageText = m.message || '';
+      navigator.clipboard.writeText(messageText);
+      setStatus('Copied message content to clipboard.');
+    }
+
+    function deleteMessage(id) {
+      if(!confirm('Delete this message?')) return;
+      db.ref('messages/'+id).remove().then(()=>{
+        setStatus('Deleted message ' + id + '.');
+        fetchMessages();
+      }).catch(err=> setStatus('Delete failed: ' + err.message, 'error'));
+    }
+
+    function deleteAllFiltered() {
+      if(!confirm('Delete ALL currently filtered ('+filtered.length+') messages? This cannot be undone.')) return;
+      const updates = {};
+      filtered.forEach(m => { updates['messages/'+m.id] = null; });
+      db.ref().update(updates).then(()=>{
+        setStatus('Deleted ' + filtered.length + ' messages.');
+        fetchMessages();
+      }).catch(err=> setStatus('Bulk delete failed: ' + err.message, 'error'));
+    }
+
+  // Event listeners (wired after auth success)
+    searchEl.addEventListener('input', () => applyFilter());
+    exportBtn.addEventListener('click', exportCSV);
+    refreshBtn.addEventListener('click', fetchMessages);
+    deleteAllBtn.addEventListener('click', deleteAllFiltered);
+
+    bodyEl.addEventListener('click', e => {
+      const copyId = e.target.getAttribute('data-copy');
+      const delId = e.target.getAttribute('data-del');
+      if(copyId) copyMessage(copyId);
+      if(delId) deleteMessage(delId);
+    });
+
+  // ==== Authentication gating (Google) ====
+  // Auto-load messages since portfolio password protection is already handled
+  document.addEventListener('DOMContentLoaded', function() {
+    fetchMessages();
+  });
+  </script>
+</body>
+</html>

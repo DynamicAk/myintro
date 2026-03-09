@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhishek Kumar</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+<aside class="sidebar" data-sidebar>
+
+  <div class="sidebar-info">
+
+<!--     theme-toggle -->
+    <button id="theme-toggle" aria-label="Toggle light mode" class="theme-btn">
+  <ion-icon name="sunny-outline"></ion-icon>
+</button>
+
+
+    <figure class="avatar-box">
+      <img src="./assets/images/my-avatar.png" alt="Abhishek Kumar" width="80">
+    </figure>
+
+    <div class="info-content">
+      <h1 class="name" title="Abhishek Kumar">Abhishek Kumar</h1>
+      <p class="title">Data Engineer</p>
+    </div>
+
+    <button class="info_more-btn" data-sidebar-btn>
+      <span>Show Contacts</span>
+      <ion-icon name="chevron-down"></ion-icon>
+    </button>
+
+  </div>
+
+  <div class="sidebar-info_more">
+
+    <div class="separator"></div>
+
+    <ul class="contacts-list">
+
+      <li class="contact-item">
+        <div class="icon-box">
+          <ion-icon name="mail-outline"></ion-icon>
+        </div>
+        <div class="contact-info">
+          <p class="contact-title">Email</p>
+          <a href="mailto:Abhishek.kumar.nitd@gmail.com" class="contact-link">Abhishek.kumar.nitd@gmail.com</a>
+        </div>
+      </li>
+
+      <li class="contact-item">
+        <div class="icon-box">
+          <ion-icon name="location-outline"></ion-icon>
+        </div>
+        <div class="contact-info">
+          <p class="contact-title">Location</p>
+          <address>New Delhi, India</address>
+        </div>
+      </li>
+
+      
+<li class="contact-item">
+  <div class="icon-box">
+    <ion-icon name="document-outline"></ion-icon>
+  </div>
+  <div class="contact-info">
+    <p class="contact-title">Resume</p>
+    <a href="https://drive.google.com/file/d/1ifHgk8oIDQ9_PfOjz5E2-1Gf3M2Al8Lf/view?usp=sharing" class="contact-link" target="_blank">
+      View Resume
+    </a>
+  </div>
+</li>
+
+
+    </ul>
+
+    <div class="separator"></div>
+
+    <ul class="social-list">
+
+      <li class="social-item">
+        <a href="https://www.linkedin.com/in/abhishek-kumar-nit-delhi/" class="social-link" target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </li>
+
+      <li class="social-item">
+        <a href="https://github.com/Dynamic-Ak" class="social-link" target="_blank">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+      </li>
+
+      <li class="social-item">
+        <a href="https://leetcode.com/u/Abhishek_kumar_nitd/" class="social-link" target="_blank">
+          <ion-icon name="code-slash-outline"></ion-icon>
+        </a>
+      </li>
+
+      <!-- Private/admin messages viewer link -->
+      <li class="social-item" title="View contact form messages (admin)">
+        <a href="./messages.html" class="social-link" target="_blank" rel="noopener">
+          <ion-icon name="heart-outline"></ion-icon>
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+</aside>
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Portfolio</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+<article class="about active" data-page="about">
+
+  <header>
+    <h2 class="h2 article-title">About Me</h2>
+  </header>
+
+<section class="about-text">
+  <p>
+    I'm Abhishek Kumar, a Data Engineering Intern at Sigmoid and a B.Tech student in Electronics and Communication Engineering at NIT Delhi, with a Minor in Artificial Intelligence and Machine Learning. I enjoy building scalable data solutions and working with technologies such as Python, SQL, and modern cloud platforms to process and transform large datasets efficiently.
+  </p>
+
+  <p>
+    My experience spans data engineering, cloud technologies, and applied machine learning. I have worked as a Google Cloud Facilitator gaining hands-on experience with GCP and Firebase, and completed a research internship where I helped design a smart toll system with a web-based interface and an integrated ML model. Alongside my technical work, I have been actively involved as a core member of the SANGAM Yoga Club and contributed to Training & Placement activities at NIT Delhi.
+  </p>
+</section>
+
+  <!--
+    - service
+  -->
+<section class="service">
+
+  <h3 class="h3 service-title">What I'm Doing</h3>
+
+  <ul class="service-list">
+
+    <li class="service-item">
+      <div class="service-icon-box">
+        <img src="./assets/images/icon-dev.svg" alt="data engineering icon" width="40">
+      </div>
+      <div class="service-content-box">
+        <h4 class="h4 service-item-title">Data Engineering</h4>
+        <p class="service-item-text">
+          Building scalable data pipelines to process, transform, and manage large datasets using Python, SQL, and distributed data processing tools.
+        </p>
+      </div>
+    </li>
+
+    <li class="service-item">
+      <div class="service-icon-box">
+        <img src="./assets/images/cloud.svg" alt="cloud engineering icon" width="40">
+      </div>
+      <div class="service-content-box">
+        <h4 class="h4 service-item-title">Cloud & Data Platforms</h4>
+        <p class="service-item-text">
+          Working with modern cloud technologies and data platforms such as Databricks, Snowflake, and GCP to build reliable and scalable data systems.
+        </p>
+      </div>
+    </li>
+
+    <li class="service-item">
+      <div class="service-icon-box">
+        <img src="./assets/images/icon-app.svg" alt="data automation icon" width="40">
+      </div>
+      <div class="service-content-box">
+        <h4 class="h4 service-item-title">Data Automation</h4>
+        <p class="service-item-text">
+          Automating data workflows using tools like Airflow and scripting solutions to improve efficiency, reliability, and monitoring of data pipelines.
+        </p>
+      </div>
+    </li>
+
+    <li class="service-item">
+      <div class="service-icon-box">
+        <img src="./assets/images/icon-design.svg" alt="machine learning icon" width="40">
+      </div>
+      <div class="service-content-box">
+        <h4 class="h4 service-item-title">Machine Learning Applications</h4>
+        <p class="service-item-text">
+          Applying machine learning techniques to build practical solutions, including model integration with data pipelines and real-world systems.
+        </p>
+      </div>
+    </li>
+
+  </ul>
+
+</section>
+  <!--
+    - testimonials modal
+  -->
+
+  <div class="modal-container" data-modal-container>
+    <div class="overlay" data-overlay></div>
+    <section class="testimonials-modal">
+      <button class="modal-close-btn" data-modal-close-btn>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+    </section>
+  </div>
+
+</article>
+
+
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+<article class="resume" data-page="resume">
+
+  <header>
+    <h2 class="h2 article-title">Resume</h2>
+  </header>
+
+<section class="timeline">
+
+  <div class="title-wrapper">
+    <div class="icon-box">
+      <ion-icon name="book-outline"></ion-icon>
+    </div>
+
+    <h3 class="h3">Education</h3>
+  </div>
+
+  <ol class="timeline-list">
+
+    <li class="timeline-item">
+      <h4 class="h4 timeline-item-title">B.Tech, Electronics and Communication Engineering — NIT Delhi</h4>
+      <span>Sep 2022 — Jul 2026 (Expected) | CGPA: 7.41</span>
+      <p class="timeline-text">
+        Studying core engineering concepts along with programming, data systems, and modern computing technologies.
+      </p>
+    </li>
+
+    <li class="timeline-item">
+      <h4 class="h4 timeline-item-title">Minor in Artificial Intelligence & Machine Learning — NIT Delhi</h4>
+      <span>Jul 2024 — Jul 2026</span>
+      <p class="timeline-text">
+        Coursework in machine learning, deep learning, data science, and AI-driven system design.
+      </p>
+    </li>
+
+    <li class="timeline-item">
+      <h4 class="h4 timeline-item-title">CBSE Class XII — School of Excellence, Rohini</h4>
+      <span>2020 — 2021 | 93%</span>
+      <p class="timeline-text">
+        Completed higher secondary education with Physics, Chemistry, Mathematics, and Computer Science.
+      </p>
+    </li>
+
+    <li class="timeline-item">
+      <h4 class="h4 timeline-item-title">CBSE Class X — BVM Public School</h4>
+      <span>2018 — 2019 | 86.4%</span>
+      <p class="timeline-text">
+        Built a strong academic foundation in mathematics, science, and analytical thinking.
+      </p>
+    </li>
+
+  </ol>
+
+</section>
+
+  <section class="timeline">
+
+    <div class="title-wrapper">
+      <div class="icon-box">
+        <ion-icon name="book-outline"></ion-icon>
+      </div>
+
+      <h3 class="h3">Experience</h3>
+    </div>
+
+    <ol class="timeline-list">
+
+      <li class="timeline-item">
+        <h4 class="h4 timeline-item-title">Database Coordinator - TNP Cell, NIT Delhi</h4>
+        <span>Feb 2023 — Jan 2024</span>
+        <p class="timeline-text">
+          Managed placement databases and collected HR contacts to facilitate student placements and internships.
+        </p>
+      </li>
+
+      <li class="timeline-item">
+        <h4 class="h4 timeline-item-title">Research Intern - Smart Toll System, NIT Kurukshetra</h4>
+        <span>Jun 2024 — Jul 2024</span>
+        <p class="timeline-text">
+          Worked on GPS-based toll automation using GNSS research; designed a user-friendly web interface to improve collection speed.
+        </p>
+      </li>
+
+    </ol>
+
+  </section>
+
+  <section class="skill">
+
+    <h3 class="h3 skills-title">My Skills</h3>
+
+    <ul class="skills-list content-card">
+
+      <li class="skills-item">
+        <div class="title-wrapper">
+          <h5 class="h5">Python</h5>
+          <data value="90">Expert</data>
+        </div>
+        <div class="skill-progress-bg">
+          <div class="skill-progress-fill" style="width: 90%;"></div>
+        </div>
+      </li>
+
+      <li class="skills-item">
+        <div class="title-wrapper">
+          <h5 class="h5">Full-Stack Development</h5>
+          <data value="85">Advanced</data>
+        </div>
+        <div class="skill-progress-bg">
+          <div class="skill-progress-fill" style="width: 85%;"></div>
+        </div>
+      </li>
+
+      <li class="skills-item">
+        <div class="title-wrapper">
+          <h5 class="h5">Machine Learning & Data Analysis</h5>
+          <data value="75">Proficient</data>
+        </div>
+        <div class="skill-progress-bg">
+          <div class="skill-progress-fill" style="width: 75%;"></div>
+        </div>
+      </li>
+
+      <li class="skills-item">
+        <div class="title-wrapper">
+          <h5 class="h5">SQL & Firebase</h5>
+          <data value="70">Intermediate</data>
+        </div>
+        <div class="skill-progress-bg">
+          <div class="skill-progress-fill" style="width: 70%;"></div>
+        </div>
+      </li>
+
+    </ul>
+
+  </section>
+
+</article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+<article class="portfolio" data-page="portfolio">
+
+  <header>
+    <h2 class="h2 article-title">Portfolio</h2>
+  </header>
+
+  <section class="projects">
+
+    <ul class="filter-list">
+      <li class="filter-item">
+        <button class="active" data-filter-btn>All</button>
+      </li>
+      <li class="filter-item">
+        <button data-filter-btn>ai/ml projects</button>
+      </li>
+      <li class="filter-item">
+        <button data-filter-btn>Applications</button>
+      </li>
+      <li class="filter-item">
+        <button data-filter-btn>Web development</button>
+      </li>
+    </ul>
+
+    <div class="filter-select-box">
+      <button class="filter-select" data-select>
+        <div class="select-value" data-selecct-value>Select category</div>
+        <div class="select-icon">
+          <ion-icon name="chevron-down"></ion-icon>
+        </div>
+      </button>
+      <ul class="select-list">
+        <li class="select-item"><button data-select-item>All</button></li>
+        <li class="select-item"><button data-select-item>AI/Ml projects</button></li>
+        <li class="select-item"><button data-select-item>Applications</button></li>
+        <li class="select-item"><button data-select-item>Web development</button></li>
+      </ul>
+    </div>
+
+    <ul class="project-list">
+
+      <li class="project-item active" data-filter-item data-category="ai/ml projects">
+        <a href="https://dynamic-ak.github.io/SmartTollsystem/">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/TCS.png" alt="finance" loading="lazy">
+          </figure>
+          <h3 class="project-title">Smart Toll collection System</h3>
+          <p class="project-category">AI/ML Projects</p>
+        </a>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="web development">
+        <a href="https://dynamic-ak.github.io/QR-based-shopingCart/">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/cart.png" alt="orizon" loading="lazy">
+          </figure>
+          <h3 class="project-title">Wall-tech (eCommerce)</h3>
+          <p class="project-category">Web development</p>
+        </a>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="web development">
+        <a href="https://github.com/Dynamic-Ak/flask-task-manager">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/task.png" alt="fundo" loading="lazy">
+          </figure>
+          <h3 class="project-title">TaskNext UI</h3>
+          <p class="project-category">Web Development</p>
+        </a>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="applications">
+        <a href="https://github.com/Dynamic-Ak/ABS-GUI">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/proj_2.jpg" alt="brawlhalla" loading="lazy">
+          </figure>
+          <h3 class="project-title">ABS GUI Toolkit</h3>
+          <p class="project-category">Applications</p>
+        </a>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="applications">
+        <a href="https://dynamic-ak.github.io/livechat/">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/chat.png" alt="task manager" loading="lazy">
+          </figure>
+          <h3 class="project-title">Dynamic Chat App</h3>
+          <p class="project-category">Applications</p>
+        </a>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="applications">
+        <a href="https://github.com/Dynamic-Ak/lockfolder">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/folder_locker.png" alt="arrival" loading="lazy">
+          </figure>
+          <h3 class="project-title">Encryption-Based Folder Locker</h3>
+          <p class="project-category">Applications</p>
+        </a>
+      </li>
+
+    </ul>
+
+  </section>
+
+</article>
+
+
+
+
+      <!--
+        - #CONTACT
+      -->
+
+  <article class="contact" data-page="contact">
+
+  <header>
+    <h2 class="h2 article-title">Contact</h2>
+  </header>
+
+  <section class="mapbox" data-mapbox>
+    <figure>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113681.28165959386!2d77.06889940284176!3d28.64368485124411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd34d1e2790f%3A0x4bffb6f7d6a0826f!2sNew%20Delhi%2C%20Delhi%2C%20India!5e0!3m2!1sen!2sin!4v1721878400000!5m2!1sen!2sin"
+        width="400" height="300" loading="lazy"></iframe>
+    </figure>
+  </section>
+
+  <section class="contact-form">
+
+    <h3 class="h3 form-title">Contact Abhishek Kumar</h3>
+
+    <form action="#" class="form" data-form>
+
+      <div class="input-wrapper">
+        <input type="text" name="fullname" class="form-input" placeholder="Your Name" required data-form-input>
+
+        <input type="email" name="email" class="form-input" placeholder="Your Email Address" required data-form-input>
+      </div>
+
+      <textarea name="message" class="form-input" placeholder="Type your message here (project proposal, tech discussion, collaboration...)" required data-form-input></textarea>
+
+      <!-- Honeypot field (invisible to users) -->
+      <div style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">
+        <label>Leave this field empty
+          <input type="text" name="website" tabindex="-1" autocomplete="off">
+        </label>
+      </div>
+
+      <button class="form-btn" type="submit" disabled data-form-btn>
+        <ion-icon name="paper-plane"></ion-icon>
+        <span>Send to me</span>
+      </button>
+
+      <p style="margin-top:16px;font-size:0.95em;">
+        You can also email me directly at <b>Abhishek.kumar.nitd@gmail.com</b>.
+      </p>
+      <div class="form-messages" data-form-messages></div>
+    </form>
+
+  </section>
+
+</article>
+
+
+      <!--
+        - #FOOTER
+      -->
+
+<footer class="footer">
+  <div class="container">
+
+
+<p style="font-size: clamp(9px, 2vw, 14px); margin: 5px 0; text-align: center; white-space: nowrap; color: #fbbc00;">
+  &copy; 2025 DynamicAk. All rights reserved. |
+  Total Visitors: <span id="visitorCount" style="display: inline;">*</span> |
+  Live Visitors: <span id="liveVisitorCount" style="display: inline;">*</span>
+</p>
+
+
+  </div>
+</footer>
+
+
+    </div>
+
+  </main>
+
+
+
+
+  <!-- Firebase SDK v8 (supports global 'firebase') -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <script src="./assets/js/visitor.js"></script>
+  <script src="./assets/js/contact.js"></script>
+
+  <!--- custom js link-->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
