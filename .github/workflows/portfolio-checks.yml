@@ -1,0 +1,21 @@
+name: Portfolio checks
+on:
+  pull_request:
+  push:
+    branches: [portfolio-2-premium-ai]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check assets/js/portfolio-core.js && node --check assets/js/portfolio-v2.js && node --test tests/portfolio.test.cjs
+      - run: npm install --no-save --no-package-lock @playwright/test
+      - run: npx playwright install --with-deps chromium
+      - run: |
+          python3 -m http.server 8000 >/tmp/portfolio-server.log 2>&1 &
+          npx playwright test tests/portfolio.spec.cjs --browser=chromium

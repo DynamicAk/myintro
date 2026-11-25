@@ -1,0 +1,190 @@
+[
+  {
+    "title": "Professional profile",
+    "text": "I'm Abhishek Kumar, a Data and Software Engineer and NIT Delhi graduate with a B.Tech in Electronics and Communication Engineering and a minor in Artificial Intelligence and Machine Learning. I completed my Data Engineering internship at Sigmoid, working on production data pipelines across 14+ global markets. I enjoy building reliable data systems, intelligent applications and practical software solutions using Python, SQL, PySpark, Azure Databricks and modern AI tools.",
+    "page": "about",
+    "tags": "about background engineer introduction hire profile"
+  },
+  {
+    "title": "Data Engineering",
+    "text": "PySpark, Apache Spark, Delta Lake, Medallion Architecture, Star Schema, Incremental Loading, Data Warehousing",
+    "page": "about",
+    "tags": "skills expertise achievement"
+  },
+  {
+    "title": "Cloud & Orchestration",
+    "text": "Azure Databricks, Azure Data Factory, ADLS Gen2, Azure DevOps",
+    "page": "about",
+    "tags": "skills expertise achievement"
+  },
+  {
+    "title": "Governance & Quality",
+    "text": "Unity Catalog, Data Quality, Schema Evolution, Data Lineage, Monitoring & Alerting",
+    "page": "about",
+    "tags": "skills expertise achievement"
+  },
+  {
+    "title": "GenAI & RAG",
+    "text": "LangChain, LlamaIndex, ChromaDB, Ollama, Vector Embeddings, ReAct Agents, FastMCP",
+    "page": "about",
+    "tags": "skills expertise achievement"
+  },
+  {
+    "title": "Languages & Tools",
+    "text": "Python, SQL, Bash, Flask, Streamlit, Gradio, Plotly, REST APIs, Git, CI/CD",
+    "page": "about",
+    "tags": "skills expertise achievement"
+  },
+  {
+    "title": "Office & Productivity Tools",
+    "text": "Microsoft Word, Excel, PowerPoint, Google Docs, Sheets, Slides, VS Code, ChatGPT, Claude Code and Codex.",
+    "page": "about",
+    "tags": "skills expertise achievement"
+  },
+  {
+    "title": "Yoga Gold Medalist",
+    "text": "Gold medalist in yoga at ZEAL NIT Delhi and ITUSA NIT Kurukshetra.",
+    "page": "about",
+    "tags": "skills expertise achievement"
+  },
+  {
+    "title": "SANGAM Yoga Club",
+    "text": "I served as Team Lead at NIT Delhi, developing leadership and event management skills.",
+    "page": "about",
+    "tags": "skills expertise achievement"
+  },
+  {
+    "title": "450+ Coding Problems",
+    "text": "I solved 450+ DSA, SQL and database problems on LeetCode.",
+    "page": "about",
+    "tags": "skills expertise achievement"
+  },
+  {
+    "title": "Google Cloud Facilitator",
+    "text": "Achieved the Advanced Milestone in the Google Cloud Facilitator program.",
+    "page": "about",
+    "tags": "skills expertise achievement"
+  },
+  {
+    "title": "💪 Calisthenics",
+    "text": "",
+    "page": "about",
+    "tags": "skills expertise achievement"
+  },
+  {
+    "title": "✈️ Travelling",
+    "text": "",
+    "page": "about",
+    "tags": "skills expertise achievement"
+  },
+  {
+    "title": "🧘 Yoga",
+    "text": "",
+    "page": "about",
+    "tags": "skills expertise achievement"
+  },
+  {
+    "title": "💡 Technology Exploration",
+    "text": "",
+    "page": "about",
+    "tags": "skills expertise achievement"
+  },
+  {
+    "title": "Databricks Certified Data Engineer Associate",
+    "text": "July 2026 – July 2028",
+    "page": "about",
+    "tags": "certification credential certified databricks"
+  },
+  {
+    "title": "Data Engineer Intern — Sigmoid (Client: Reckitt)",
+    "text": "Jan 2026 — Oct 2026 | Bengaluru, India Operated production multi-tenant ELT pipelines using Azure Databricks, PySpark, Delta Lake and ADF, processing 1M+ records daily across 14+ global markets from 7+ source systems. Built a declarative data quality framework using databricks-labs-dqx and YAML rules, record quarantine, metrics logging and alerts. Resolved 25+ pipeline, data and configuration issues, including schema evolution across 120+ tenant-entity combinations and SFTP retry logic. Monitored production jobs against a 2 PM IST SLA, sustaining 98–99% on-time delivery. Managed DEV-to-PROD releases using Git, pull requests and Azure DevOps CI/CD. Standardized multi-country source codes through List-of-Values mapping workflows.",
+    "page": "experience",
+    "tags": "career internship work education experience"
+  },
+  {
+    "title": "Summer Research Intern — NIT Kurukshetra",
+    "text": "Jun 2024 — Jul 2024 | Kurukshetra, India Built a smart toll pipeline using Python, YOLOv8 and OCR for vehicle license plate recognition. Processed 1,000+ vehicle images, developed a Streamlit dashboard and stored structured vehicle records in Firebase.",
+    "page": "experience",
+    "tags": "career internship work education experience"
+  },
+  {
+    "title": "B.Tech, Electronics and Communication Engineering — NIT Delhi",
+    "text": "Sep 2022 — Jul 2026 | CGPA: 7.5 Minor in Artificial Intelligence & Machine Learning.",
+    "page": "experience",
+    "tags": "career internship work education experience"
+  },
+  {
+    "title": "CBSE Class XII — School of Excellence, Rohini",
+    "text": "2020 — 2021 | 93% Physics, Chemistry, Mathematics and Computer Science.",
+    "page": "experience",
+    "tags": "career internship work education experience"
+  },
+  {
+    "title": "CBSE Class X — BVM Public School",
+    "text": "2018 — 2019 | 86.4%",
+    "page": "experience",
+    "tags": "career internship work education experience"
+  },
+  {
+    "title": "EdTech Learning Analytics Pipeline",
+    "text": "I built an end-to-end ETL pipeline with Bronze, Silver and Gold layers, learner analytics and Snowflake PII masking. PySpark · Delta Lake · Snowflake · OneLake",
+    "page": "projects",
+    "tags": "project application architecture demo source code",
+    "url": "https://github.com/DynamicAk/Edtech_learning_analytics_pipeline"
+  },
+  {
+    "title": "NSE Intelligence",
+    "text": "I built a local AI chatbot for Indian stock market intelligence, live quotes, RSS news, RAG and MCP tools. LangChain · LlamaIndex · Ollama · ChromaDB · FastMCP",
+    "page": "projects",
+    "tags": "project application architecture demo source code",
+    "url": "https://github.com/DynamicAk/nse_intelligence"
+  },
+  {
+    "title": "Kirana Rate Board",
+    "text": "I built a mobile-first grocery price board with multilingual fuzzy search, offline access and real-time synchronization. JavaScript · Firebase · PWA · Levenshtein",
+    "page": "projects",
+    "tags": "project application architecture demo source code",
+    "url": "https://github.com/DynamicAk/kirana-rate-board"
+  },
+  {
+    "title": "Smart Toll Management System",
+    "text": "I explored GPS-based tolling and automatic vehicle plate recognition using computer vision. Python · YOLOv8 · OCR · OpenCV",
+    "page": "projects",
+    "tags": "project application architecture demo source code",
+    "url": "https://github.com/DynamicAk/Smart_toll_system"
+  },
+  {
+    "title": "ChurnShield AI",
+    "text": "I built a customer churn prediction workflow with feature engineering, model comparison, threshold tuning and a Streamlit dashboard. Python · Scikit-learn · LightGBM · Streamlit",
+    "page": "projects",
+    "tags": "project application architecture demo source code",
+    "url": "https://github.com/DynamicAk/customerchurnPrediction"
+  },
+  {
+    "title": "Folder Locker",
+    "text": "I built a Windows desktop utility for password-based folder encryption and decryption. Python · Tkinter · Fernet · PyInstaller",
+    "page": "projects",
+    "tags": "project application architecture demo source code",
+    "url": "https://github.com/DynamicAk/lockfolder"
+  },
+  {
+    "title": "Call Prefix Blocker",
+    "text": "I built an Android app to block incoming calls matching user-defined prefixes using local storage and Android call screening. Android · Call Screening · SharedPreferences",
+    "page": "projects",
+    "tags": "project application architecture demo source code",
+    "url": "https://github.com/DynamicAk/call-prefix-blocker"
+  },
+  {
+    "title": "WriteForMe — Whisper Flow",
+    "text": "I built an offline Windows dictation app that transcribes speech and pastes text at the cursor, supporting English, Hindi and other languages. Python · Whisper · Speech Recognition",
+    "page": "projects",
+    "tags": "project application architecture demo source code",
+    "url": "https://github.com/DynamicAk/WriteForMe"
+  },
+  {
+    "title": "Contact and résumé",
+    "text": "The portfolio sidebar provides email, résumé, LinkedIn, GitHub and LeetCode links. Use these to contact Abhishek or review his résumé.",
+    "page": "about",
+    "tags": "resume cv contact email linkedin github leetcode recruiter"
+  }
+]
