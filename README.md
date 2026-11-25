@@ -2,7 +2,7 @@
 
 I built this website to present my professional experience, education, technical skills, projects and personal interests in one place.
 
-**Live website:** [View my portfolio](https://dynamic-ak.github.io/myintro/)
+**Live website:** [View my portfolio](https://dynamicak.github.io/myintro/)
 
 ## What's included
 
