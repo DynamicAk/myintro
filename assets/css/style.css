@@ -1836,3 +1836,15 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 
+
+/* Portfolio refresh: responsive cards and experience details */
+.portfolio-bullets { padding-left: 1.2em; }
+.portfolio-bullets li { list-style: disc; margin-bottom: 8px; }
+.portfolio-cards .service-item { min-width: 0; text-align: left; }
+.portfolio-cards .service-content-box { text-align: left; width: 100%; }
+.portfolio-icon { font-size: 28px; color: var(--vegas-gold); margin-bottom: 12px; }
+.portfolio-tech { color: var(--light-gray); font-size: var(--fs-7); margin-top: 12px; overflow-wrap: anywhere; }
+.portfolio-link { color: var(--vegas-gold); font-weight: 600; margin-top: 14px; display: inline-block; }
+.portfolio-link:hover { text-decoration: underline; }
+.timeline .service-list { margin-bottom: 24px; }
+.footer p { white-space: normal !important; color: var(--vegas-gold) !important; }
