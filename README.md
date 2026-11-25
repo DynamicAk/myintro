@@ -1,47 +1,29 @@
 # My Personal Portfolio
 
-## Problem I wanted to solve
-
-I wanted to create a single place where I could present my education, technical skills, experience and projects instead of sharing separate documents and links with recruiters or people interested in my work.
-
-## About the project
-
-I developed this personal portfolio website to introduce myself, showcase my work and provide a way for visitors to contact me. I used a static frontend with Firebase Realtime Database for contact messages and visitor tracking.
+I built this website to present my professional experience, education, technical skills, projects and personal interests in one place.
 
 **Live website:** [View my portfolio](https://dynamic-ak.github.io/myintro/)
 
-## Key features
+## What's included
 
-- About me section with my professional background and interests.
-- Resume section covering education, experience and skills.
-- Project portfolio showcasing my technical work.
-- Contact form that saves submitted messages to Firebase Realtime Database.
-- Visitor count and live visitor tracking.
-- Separate login and message-viewing pages for managing contact submissions.
+- **About:** My background as a data and software engineer, technical expertise, Databricks certification, achievements, yoga club leadership and hobbies.
+- **Experience:** My internships at Sigmoid and NIT Kurukshetra, and my education.
+- **Projects:** Five featured technical projects and three practical personal apps, with GitHub links.
+- Dark/light mode, responsive layout, resume and social links, and total/live visitor counters.
 
 ## Technology stack
 
-| Component | Technology |
-| --- | --- |
-| Frontend | HTML, CSS, JavaScript |
-| Database | Firebase Realtime Database |
-| Hosting | GitHub Pages |
-| Typography | Google Fonts |
+HTML, CSS, vanilla JavaScript, Firebase Realtime Database (visitor tracking only), GitHub Pages.
 
 ## Project structure
 
-- `index.html` — main portfolio page.
-- `login.html` — message access login page.
-- `messages.html` — contact message dashboard.
-- `assets/css/` — website styling.
-- `assets/js/script.js` — frontend interactions.
-- `assets/js/contact.js` — contact form integration.
-- `assets/js/visitor.js` — visitor tracking.
-- `assets/js/auth.js` — client-side access checks.
-- `assets/` — website assets.
-- `css/` and `js/` — additional frontend directories.
+- `index.html` — portfolio content and navigation.
+- `assets/css/style.css` — responsive styling and themes.
+- `assets/js/script.js` — navigation, sidebar and theme controls.
+- `assets/js/visitor.js` — Firebase visitor tracking.
+- `assets/images/` — profile image and other assets.
 
-## How to run locally
+## Run locally
 
 ```bash
 git clone https://github.com/DynamicAk/myintro.git
@@ -49,14 +31,12 @@ cd myintro
 python -m http.server 8000
 ```
 
-Open `http://localhost:8000` in your browser. No frontend build step is required.
-
-If you want to reuse this project, create your own Firebase project and Realtime Database, replace the Firebase configuration with your own, and configure appropriate database security rules before enabling contact messages or visitor tracking.
+Open http://localhost:8000. No build step is required. If reusing the site, configure your own Firebase project and database rules for the visitor counters.
 
 ## Deployment
 
-I use GitHub Pages to host the static website. To deploy your own copy, enable GitHub Pages for your chosen branch and root directory in the repository settings.
+I host the static website using GitHub Pages.
 
-## Current scope
+## Latest update
 
-The site includes client-side login checks for the message dashboard. These checks alone are not a security boundary: access to private messages must be enforced by Firebase authentication and database rules. I recommend verifying those rules before using the dashboard with real visitor data.
+Updated my experience and projects, added achievements and personal apps, and simplified navigation to About, Experience and Projects. Removed the contact form and admin dashboard while retaining visitor tracking. Existing Firebase data and remote database rules are not changed by this website update.
