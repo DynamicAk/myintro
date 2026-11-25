@@ -40,3 +40,25 @@ I host the static website using GitHub Pages.
 ## Latest update
 
 Updated my experience and projects, added achievements and personal apps, and simplified navigation to About, Experience and Projects. Removed the contact form and admin dashboard while retaining visitor tracking. Existing Firebase data and remote database rules are not changed by this website update.
+
+
+## Portfolio 2.0 — premium design & AK AI
+
+- Kept my original black-and-gold identity, dark/light themes, content, navigation, Firebase visitor tracking and GitHub Pages hosting.
+- Added a responsive animated hero, data flow, count-up impact metrics, scroll reveals, staggered cards, hover glow and animated timeline.
+- Added an interactive medallion pipeline and a safe, allowlisted developer terminal.
+- Added AK AI with ranked lexical retrieval from a public portfolio knowledge base, source links, follow-up context, recruiter/technical modes, copy/clear chat and optional voice input.
+- Real generative RAG uses the browser's on-device LanguageModel API when available and explicitly enabled. No API key, external LLM service, backend or billing account is required. Some devices/browsers cannot run the local model; they get clearly labeled extractive portfolio search instead. The model may need a download. Generated answers can be imperfect; check citations. Voice recognition may be handled by the browser's external speech service.
+- The assistant does not execute visitor commands, read private documents or save chat history. Its evidence is public and bundled. Update `assets/data/portfolio-knowledge.json` whenever portfolio facts change.
+
+### Tests
+
+Run `node --test tests/portfolio.test.cjs` for retrieval, guardrails, terminal and markup checks. For the optional browser smoke test, install `@playwright/test`, run `npx playwright install chromium`, start a local server on port 8000 and run `npx playwright test tests/portfolio.spec.cjs --browser=chromium`. Test the actual on-device model on a supported browser separately.
+
+### New files
+
+- `assets/css/portfolio-v2.css` — theme-aware enhancements.
+- `assets/js/portfolio-core.js` — retrieval and command validation.
+- `assets/js/portfolio-v2.js` — motion, pipeline, terminal and assistant UI.
+- `assets/data/portfolio-knowledge.json` — public knowledge base.
+- `tests/` — unit and browser smoke tests.
